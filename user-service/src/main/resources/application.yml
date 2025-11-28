@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: user-service
+
+  datasource:
+    username: postgres
+    password: 1234
+    url: "jdbc:postgresql://localhost:5432/marketplace_user"
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: on
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5151/eureka/
+
+jwt:
+  secret: "mySecretKeyForJWTTokenGenerationAndValidation12345678901234567890"
+  expiration: 86400000
+
+server:
+  port: 7075
