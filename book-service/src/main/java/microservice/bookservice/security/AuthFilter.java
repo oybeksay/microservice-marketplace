@@ -1,4 +1,4 @@
-package microservice.bookservice.filter;
+package microservice.bookservice.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -20,8 +20,6 @@ public class AuthFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String username = request.getHeader("X-Auth-User");
         String rolesHeader = request.getHeader("X-Auth-Roles");
-        System.out.println("AuthFilter - X-Auth-User: " + username);
-        System.out.println("AuthFilter - X-Auth-Roles: " + rolesHeader);
 
         if (username != null && rolesHeader != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 

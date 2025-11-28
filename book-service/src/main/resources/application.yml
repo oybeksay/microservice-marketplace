@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: book-service
+
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/marketplace_book"
+    username: postgres
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  client:
+    service-url:
+        defaultZone: http://localhost:5151/eureka/
