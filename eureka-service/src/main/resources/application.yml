@@ -2,16 +2,9 @@ spring:
   application:
     name: eureka-service
 
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-    service-url:
-      defaultZone: http://localhost:5151/eureka/
-  server:
-    enable-self-preservation: false
+  config:
+    import: "configserver:"
 
-server:
-  port: 5151
+  cloud:
+    config:
+      uri: http://localhost:8888

@@ -2,14 +2,12 @@ spring:
   application:
     name: api-gateway
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:5151/eureka/
+  config:
+    import: "configserver:"
 
-server:
-  port: 5252
+  cloud:
+    config:
+      uri: http://localhost:8888
 
 jwt:
   secret: "mySecretKeyForJWTTokenGenerationAndValidation12345678901234567890"
-
