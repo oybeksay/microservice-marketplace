@@ -1,8 +1,8 @@
-package microservice.apigateway.filter;
+package microservice.apigateway.security;
 
 
 import io.jsonwebtoken.Claims;
-import microservice.apigateway.security.JwtUtil;
+import microservice.apigateway.config.RouterValidator;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
 import org.springframework.http.HttpHeaders;
@@ -11,7 +11,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
-
+//agar har bir servicega alohida filter kerak bo'lsa, quyidagi filterdan foydalanish mumkin
+/*
 @Component
 public class AuthenticationFilter extends AbstractGatewayFilterFactory<AuthenticationFilter.Config> {
 
@@ -27,6 +28,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
     @Override
     public GatewayFilter apply(Config config) {
         return (exchange, chain) -> {
+            System.out.println("Request register");
             if (routerValidator.isSecured.test(exchange.getRequest())) {
 
                 if (!exchange.getRequest().getHeaders().containsKey(HttpHeaders.AUTHORIZATION)) {
@@ -79,4 +81,4 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
     public static class Config {
         // Configuration properties can be added here if needed
     }
-}
+}*/

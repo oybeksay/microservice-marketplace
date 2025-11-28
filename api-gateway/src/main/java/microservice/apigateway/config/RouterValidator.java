@@ -1,4 +1,4 @@
-package microservice.apigateway.filter;
+package microservice.apigateway.config;
 
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
@@ -10,8 +10,8 @@ import java.util.function.Predicate;
 public class RouterValidator {
 
     private static List<String> WHITE_LIST = List.of(
-            "/v1/auth/login",
-            "/v1/auth/register"
+            "/users/v1/auth/login",
+            "/users/v1/auth/register"
     );
 
     public Predicate<ServerHttpRequest> isSecured = request ->

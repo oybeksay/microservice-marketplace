@@ -2,23 +2,6 @@ spring:
   application:
     name: api-gateway
 
-  cloud:
-    gateway:
-      routes:
-        - id: user-service
-          uri: lb://user-service
-          predicates:
-            - Path=/users/**
-          filters:
-            - RewritePath=/users/(?<remaining>.*), /${remaining}
-
-        - id: book-service
-          uri: lb://book-service
-          predicates:
-              - Path=/books/**
-          filters:
-              - RewritePath=/books/(?<remaining>.*), /${remaining}
-
 eureka:
   client:
     service-url:
